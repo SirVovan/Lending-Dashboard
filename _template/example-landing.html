@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Пример лендинга</title>
+  <style>
+    :root { --bg: #1a1a2e; --accent: #6c63ff; --text: #fff; --muted: #aaa; }
+    body { background: var(--bg); color: var(--text); font-family: sans-serif; margin: 0; }
+    section { padding: 80px 40px; max-width: 900px; margin: 0 auto; }
+    h1 { font-size: 3rem; }
+    h2 { font-size: 2rem; color: var(--accent); }
+    .pill { display: inline-block; background: rgba(108,99,255,.2); border: 1px solid var(--accent); padding: 4px 16px; border-radius: 20px; font-size: .85rem; }
+    .card { background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.1); border-radius: 8px; padding: 24px; margin: 16px 0; }
+    .cta { background: var(--accent); color: #fff; border: none; padding: 16px 40px; border-radius: 4px; font-size: 1rem; cursor: pointer; }
+  </style>
+</head>
+<body>
+
+<section id="hero">
+  <div class="pill">Город · Адрес</div>
+  <h1>Заголовок<br><em>сайта</em></h1>
+  <p>Описание бизнеса — 1-2 предложения о том, что вы предлагаете.</p>
+  <div>
+    <span>Услуга 1</span>
+    <span>Услуга 2</span>
+    <span>Услуга 3</span>
+  </div>
+  <button class="cta">Записаться</button>
+</section>
+
+<section id="services">
+  <h2>Наши услуги</h2>
+  <p>Подзаголовок раздела</p>
+  <div>
+    <div class="card">
+      <h3>Услуга 1</h3>
+      <p>Описание услуги.</p>
+    </div>
+    <div class="card">
+      <h3>Услуга 2</h3>
+      <p>Описание услуги.</p>
+    </div>
+    <div class="card">
+      <h3>Услуга 3</h3>
+      <p>Описание услуги.</p>
+    </div>
+  </div>
+</section>
+
+<section id="contacts">
+  <h2>Контакты</h2>
+  <p>Адрес: ул. Примерная, 1</p>
+  <p>Телефон: +7 000 000 00 00</p>
+  <p>Email: info@example.ru</p>
+</section>
+
+<footer id="footer">
+  <p>© 2025 Название компании. Все права защищены.</p>
+</footer>
+
+</body>
+</html>
