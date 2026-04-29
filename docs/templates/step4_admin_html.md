@@ -816,3 +816,21 @@ window.onload = function() {
 5. `renderAllArrays()` — вызвать renderArray/renderStringArray для всех массивов, в конце `resubscribeArrayInputs()`
 6. В `SECTION_IDS` прописать маппинг если id секции в admin отличается от id в лендинге
 7. `events` / `мероприятия` — добавить класс `highlight` в nav-item
+8. Названия секций в nav-item и `.fields-title` — строго по таблице:
+
+| section id  | Название в сайдбаре |
+|-------------|---------------------|
+| home        | Главная             |
+| nav         | Навигация           |
+| hero        | Hero                |
+| services    | Услуги              |
+| how         | Как это работает    |
+| whyus       | Зачем выбирать нас  |
+| reviews     | Отзывы              |
+| events      | Афиша               |
+| faq         | FAQ                 |
+| contacts    | Контакты            |
+| footer      | Подвал              |
+| seo         | SEO / Мета          |
+
+Для нестандартных секций — использовать читаемый перевод на русский (кроме `hero` — всегда английский).
