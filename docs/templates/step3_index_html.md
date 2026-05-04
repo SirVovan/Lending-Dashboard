@@ -59,13 +59,19 @@
   }
 
   // ─── ЗАГРУЗКА С FALLBACK ──────────────────────────────────
-  var ctrl = typeof AbortController !== 'undefined' ? new AbortController() : null;
-  var timer = setTimeout(function () { if (ctrl) ctrl.abort(); }, 4000);
+  function loadContent(url) {
+    var ctrl = typeof AbortController !== 'undefined' ? new AbortController() : null;
+    var timer = setTimeout(function () { if (ctrl) ctrl.abort(); }, 4000);
+    fetch(url, ctrl ? { signal: ctrl.signal } : {})
+      .then(function (r) { return r.json(); })
+      .then(function (data) { clearTimeout(timer); applyContent(data); })
+      .catch(function () { clearTimeout(timer); });
+  }
 
-  fetch('./content.json', ctrl ? { signal: ctrl.signal } : {})
-    .then(function (r) { return r.json(); })
-    .then(function (data) { clearTimeout(timer); applyContent(data); })
-    .catch(function () { clearTimeout(timer); });
+  fetch('./version.txt', { cache: 'no-store' })
+    .then(function (r) { return r.ok ? r.text() : ''; })
+    .then(function (v) { loadContent('./content.json' + (v.trim() ? '?v=' + v.trim() : '')); })
+    .catch(function () { loadContent('./content.json'); });
 
 })();
 </script>

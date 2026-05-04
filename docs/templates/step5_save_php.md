@@ -67,6 +67,7 @@ if ($action === 'save') {
         http_response_code(500);
         exit(json_encode(['ok' => false, 'error' => 'Rename failed']));
     }
+    file_put_contents(__DIR__ . '/version.txt', time());
 
     exit(json_encode(['ok' => true]));
 }
